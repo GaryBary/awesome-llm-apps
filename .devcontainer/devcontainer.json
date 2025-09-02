@@ -1,0 +1,15 @@
+{
+  "name": "google-adk-agent",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "python -m pip install --upgrade pip && pip install -r requirements.txt && pip install google-adk",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "ms-toolsai.jupyter"]
+    }
+  },
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "ADK Web", "onAutoForward": "openBrowser" }
+  },
+  "remoteEnv": { "PYTHONDONTWRITEBYTECODE": "1" }
+}
